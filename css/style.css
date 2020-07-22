@@ -1,0 +1,767 @@
+@import 'utilities.css';
+:root{
+    --primary:#3dcfd3;
+    --dark:#161616;
+    --pure:#FFFFFF;
+    --ternary:#898989;
+    --light:#F2F2F2;
+}
+.text:hover{
+    animation: rubberBand 1s;
+}
+
+@keyframes rubberBand{
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    35%{
+        transform: scale3d(1.25,.75,1);
+    }
+    45%{
+        transform: scale3d(.75,1,1);
+    }
+    60%{
+        transform: scale3d(1.2,.8,1);
+    }
+    75%{
+        transform: scale3d(1.05,.95,1);
+    }
+    100%{
+        transform: scale3d(1,1,1); 
+    }
+}
+.branding {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:#111;
+    z-index:200;
+    clip-path:circle(25px at calc(100% - 45px) 45px);
+    transition:all 500ms ease-in-out;
+  }
+  .branding.active {
+    clip-path:circle(75%);
+  }
+  .branding .ham-btn {
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    cursor:pointer;
+  }
+  .branding .ham-btn span {
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:50%;
+    height:2px;
+    background:var(--primary);
+    transition:all 200ms ease-in-out;
+  }
+  .branding .ham-btn span:nth-child(1) {
+    top:30%;
+  }
+  .branding .ham-btn span:nth-child(2) {
+    top:50%;
+  }
+  .branding .ham-btn span:nth-child(3) {
+    top:70%;
+  }
+  
+  .branding.active .ham-btn span:nth-child(1) {
+    top:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+  }
+  .branding.active .ham-btn span:nth-child(2) {
+    display:none;
+  }
+  .branding.active .ham-btn span:nth-child(3) {
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-45deg);
+  }
+  
+  .branding .links {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+  }
+  .branding .links a {
+    position:relative;
+    display:inline-block;
+    margin:20px 0px;
+    font-size:20px;
+    font-weight:600;
+    text-decoration:none;
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:5px;
+  }
+  .branding .links a:after {
+    content:"";
+    position:absolute;
+    left:0px;
+    bottom:-5px;
+    height:2px;
+    width:0%;
+    background:var(--pure);
+    transition:all 300ms ease-in-out;
+  }
+  .branding .links a:hover:after {
+    width:100%;
+  }
+a{
+    text-decoration: none;
+    color: var(--pure);
+}
+a:hover{
+    text-decoration: none;
+    color: var(--dark);
+}
+li{
+    list-style: none;
+}
+p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--pure);
+    
+}
+.serviceoffers h1{
+    color: var(--light);
+}
+.btn-neww{
+    /* background: transparent; */
+    color: var(--primary);
+    /* border-color: var(--primary); */
+    background-color: var(--dark);
+}
+.btn-neww:hover{
+    background: var(--primary);
+    color: var(--pure);
+}
+
+.btn-secondary{
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+    margin-bottom: -10rem;
+}
+.btn-secondary:hover{
+    background: var(--primary);
+    color: var(--dark);
+}
+.btn-n1{
+    color: var(--dark);
+    background: var(--primary);
+}
+.btn-n1:hover{
+    color: var(--primary);
+    border-color: var(--primary);
+    background: transparent;
+}
+.btn-n2{
+    color: var(--dark);
+    background: var(--primary);
+}
+.btn-n2:hover{
+    color: var(--primary);
+    border-color: var(--primary);
+    /* background: rgb( rgb(8, 36, 53)); */
+}
+.extra-div h2{
+    font-size: 1.7rem;
+    margin: 20px 0 15px 0;
+    font-weight: bold;
+    line-height: 1.6;
+    word-spacing: 4px;
+    color: var(--light);
+}
+.servicediv h2{
+    font-size: 1.1rem;
+    margin: 20px 0 15px 0;
+    font-weight: bold;
+    line-height: 1.6;
+    word-spacing: 4px;
+    color: var(--light);
+}
+
+i{
+    color: var(--primary);
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smotthing:antialiased;
+}
+header{
+    background: var(--dark);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 97%, 0 100%);
+    margin-bottom: 56px 0;
+}
+.navbar-style{
+    box-shadow: 0 5px 10px #efefef;
+}
+.container{
+    max-width: 1152px;
+    padding:0 15px;
+    margin: 0 auto;
+    padding-block-end: 1em;
+}
+header nav .left a{
+    color: var(--pure);
+    text-decoration: none;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    transition: all .3s ease;
+}
+.manu-bar
+{
+    background: var(--primary);
+}
+header nav .left a:hover{
+    color: var(--primary);
+}
+
+header nav .right a{
+    color: var(--dark);
+}
+header nav .right a:hover{
+    color: var(--pure);
+}
+header nav{
+    padding: 4rem 0;
+}
+header nav .branding{
+    margin-right: 3rem;
+}
+.hero{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    /* padding-top: 0px 0;
+    padding-bottom: 80px 0; */
+}
+.hero .left img{
+    width: 400px;
+    
+    padding-bottom: 1.3rem;
+    margin-top: 3rem;
+    
+}
+.hero .right .mhbtn{
+    color: var(--primary);
+}
+.hero .right{
+    color: var(--pure);
+    margin-bottom: 8em;
+}
+.hero .right h6{
+    font-size: 1.6rem;
+    color:var(--pure);
+    
+    margin-bottom: 1rem;
+}
+/* .hero .right h1{
+    font-size: 4rem;
+    font-weight: 100;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+.hero .right h1 span{
+    color: var(--primary);
+} */
+/* .hero .right */
+ #animname
+{
+    position: relative;
+    top: 2.2rem;
+    left: 48%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    animation: fill 0.5s ease forwards 3s;
+}
+
+.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8
+{
+    fill-opacity: -12;
+    stroke: #3dcfd3;
+    fill: #7e093a;
+    stroke-width: 18px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1000;
+}
+.m{
+    animation: m 2s ease-in-out;
+}
+
+.m1{
+    animation: m1 4s ease-in-out;
+}
+
+
+.m2{
+    animation: m2 6s ease-in-out;
+}
+
+
+.m3{
+    animation: m3 8s ease-in-out;
+}
+
+.m4{
+    animation: m4 10s ease-in-out;
+}
+
+.m5{
+    animation: m5 12s ease-in-out;
+}
+
+.m6{
+    animation: m6 14s ease-in-out;
+}
+
+.m7{
+    animation: m7 16s ease-in-out;
+}
+
+.m8{
+    animation: m8 18s ease-in-out;
+}
+@keyframes m{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes m1{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes m2{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes m3{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes m4{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes m5{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes m6{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes m7{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes m8{
+    0%
+    {
+        stroke-dashoffset: 1000;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill{
+    to{
+        fill: black;
+    }
+}
+.hero .right p{
+    line-height: 1.9;
+    margin-bottom: -2rem;
+}
+.hero .right{
+    margin-top: -1rem;
+}
+/*********** extra header div css start *********/
+.header-extradiv{
+    width: 100%; height: auto;
+    margin: 100px 0;
+    text-align: center;
+}
+.extra-div{
+    background: var(--dark);
+    border: medium none;
+    padding: 50px!important;
+    margin: 0px 32px;
+    position: sticky;
+    transition: 0.3s ease;
+    border-radius: 25px;
+    /* transition: 0.3s; */
+}
+.extra-div:hover{
+    box-shadow: 0 0 500px 0 rgb(175, 242, 248);
+    transform: translateY(-30px);
+}
+/********* extra header div css end ********/
+/***********service offers css start **********/
+.serviceoffers{
+    background: var(--dark);
+    padding: 50px 0;
+    margin-bottom: 50px;
+}
+.headings{
+    margin-bottom: 50px;
+    
+}
+
+.headings h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.names h1{
+    color: var(--pure);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.service-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress{
+    height: 0.8rem!important;
+    margin-bottom: 25px!important;
+    background: var(--light);
+}
+/***********service offers css ends **********/
+/**********project starts********************/
+
+.projects{
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+}
+.box{
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px 0 rgba(93, 253, 253, 0.932);
+    transform: translateY(-60px);
+    background-color: black;
+    border-radius: 2px;
+    transition: 0.3s ease;
+    position: sticky;
+}
+
+.box:hover{
+    background-color: rgb(175, 242, 248);
+    transition: all .3s ease-in-out;
+
+}
+.projects .box:hover p{
+    color:var(--dark);
+}
+.projects .box:hover h1{
+    color:var(--dark);
+}
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -60px!important;
+}
+.carousel-indicators li{
+    background-color: var(--dark)!important;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    background-color: var(--dark)!important;
+}
+.hello{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+}
+.box a{
+    position: relative;
+}
+.box a:after{
+    content: "\f10d";
+    font-family: FontAwesome;
+    width: 40px;
+    height: 40px;
+    /* background:linear-gradient(to right,#1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
+    color: black; */
+    background-color: black;
+    color: var(--pure);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box h1{
+    font-size: 18px;
+    font-size: 700;
+    color:var(--pure);
+    margin-bottom: 10px;
+}
+.box h2{
+    font-size: 13;
+    font-weight: 400px;
+    color: #666666;
+    margin-bottom: 20px;;
+}
+/**********project ends**********************/
+.freelancer{
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+}
+section.freelancer{
+    position: sticky;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../m12.jpg');
+    background-size: contain;
+    clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0 0);
+    color: var(--pure);
+}
+
+section.freelancer h1{
+    font-size: 2.6rem;
+    margin-top: 2.5rem;
+}
+section.freelancer p{
+    font-size: 1.2rem;
+    margin-top: 1.8rem;
+}
+section.freelancer button{
+    margin-top: 3.5rem;
+    position: relative;
+    margin-bottom: 14.5rem;
+}
+.contact{
+    width: 100%;
+    height: 100%;
+    padding: 80px 0;
+}
+section.contact{
+    text-align: center;
+    /* background-color: var(--ternary); */
+}
+section.contact h1{
+    font-size: 2.6rem;
+    margin-top: 1.5rem;
+}
+section.contact p{
+    color: #000;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+section.contact .card-wrapper{
+    margin-top: 2.6rem;
+    display: grid;
+    grid-gap: 3rem ;
+    grid-template-columns: repeat(3,1fr);
+}
+section.contact .card-wrapper .card{
+    text-align: center;
+    background-color: var(--dark);
+    
+}
+section.contact .card-wrapper .card:hover{
+    text-align: center;
+    background-color: rgb(119, 119, 122);
+    
+}
+section.contact .card-wrapper .card i{
+    padding-top: 1rem;
+    /* margin-bottom: 3rem; */
+    
+}
+section.contact .card-wrapper .card h6{
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: var(--pure);
+    margin-bottom: 4rem;
+    
+}
+section.contact .card-wrapper .card h1{
+    font-weight: 400;
+    color: var(--pure);
+    font-size: 1.6rem;
+}
+section.contact .input-wrap{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-color: #161616;
+}
+section.contact .input-wrap-2{
+    display: flex;
+    flex-direction: column;
+}
+section.contact .input-wrap-2 input{
+    margin-bottom: 2rem;
+    /* border: 1px solid var(--light);
+    font-size: 0.9rem; */
+}
+section.contact input{
+    padding: 0.5rem;
+    border: 0.1px solid var(--dark);
+    font-size: 0.9rem;
+}
+section.contact .input-wrap-2 textarea{
+    padding: 0.5rem;
+    border: 0.1px solid var(--dark);
+    font-size: 0.9rem;
+}
+section.contact .input-wrap-2 textarea:focus, section.contact input:focus{
+    outline: none;
+}
+section.contact .btn-wrapper{
+    text-align: center;
+    margin-top: 2rem;
+}
+/**********footer starts**********************/
+.footersection{
+    width: 100%;
+    height: auto;
+    padding: 70px 0 20px 0;
+    background: var(--dark);
+    position: relative;
+}
+.footersection p{
+    color: #fff;
+    text-align: center;
+}
+
+.footersection li a{
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    
+}
+.footersection h3{
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.2rem!important;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+#myBtn{
+   display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 99;
+    border: none;
+    color: black;
+    background: var(--primary);
+    padding: 10px;
+    border-radius: 10px;
+}
+#myBtn:hover{
+    background:black;
+    color: white;
+}
+/**********footer ends**********************/
+/*********** media queries******************/
+@media(max-width: 768px){
+    .nav-item{
+        text-align: center!important;
+    }
+    .projects,.blog,.contactus{
+        height: auto;
+        margin-top: 50px;
+    }
+    .card-second{
+        transform: translateY(0px);
+        margin:30px 0;
+    }
+    .contactus p{
+        padding: 0 50px;
+    }
+    .footer-div:nth-child(2){
+        text-align: left!important;
+    }
+    .footer-div{
+        margin:30px 0;
+    }
+}
